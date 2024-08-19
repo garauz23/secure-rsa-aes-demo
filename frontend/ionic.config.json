@@ -1,0 +1,7 @@
+{
+  "name": "secure-mob-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

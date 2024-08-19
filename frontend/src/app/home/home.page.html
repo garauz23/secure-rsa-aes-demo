@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title> Blank </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Blank</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <h1>Proceso de Cifrado</h1>
+    <ion-item>
+        <ion-input
+            label="Dato a encriptar"
+            placeholder="Ingresa dato"
+            [(ngModel)]="valueToEncrypt"
+            [counter]="true"
+            maxlength="20"
+        ></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="clickToEncrypt()">Encriptar</ion-button>
+
+    <ion-item>Valor en texto Plano: {{ valueToEncrypt }}</ion-item>
+    <!-- {{ valueEncrypted | json }} -->
+
+    <ion-item>
+        <ion-textarea
+            labelPlacement="floating"
+            fill="outline"
+            [autoGrow]="true"
+            label="Encrypted Text"
+            [value]="valueEncrypted"
+        ></ion-textarea>
+    </ion-item>
+
+    <h1>Proceso Inverso de prueba</h1>
+    <ion-item>
+        <ion-input
+            label="Cadena Encriptada"
+            placeholder="Ingresa dato"
+            [(ngModel)]="valueToDecrypt"
+            [counter]="true"
+            maxlength="50"
+        ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input
+            label="AES KEY"
+            placeholder="Ingresa dato"
+            [(ngModel)]="aesKey"
+            [counter]="true"
+            maxlength="20"
+        ></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="clickToDecrypt()"
+        >Desencriptar</ion-button
+    >
+
+    <ion-item>Valor en texto Plano: {{ plainValue }}</ion-item>
+</ion-content>
